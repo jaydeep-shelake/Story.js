@@ -115,4 +115,22 @@ return res.render('erros/500');
 }
 });
 
+// more user stories
+//get request to stories/user/:id
+storyRoute.get('/user/:userId', ensureAuth,async (req,res)=>{
+    
+try{
+  const stories = await Story.find({
+      user:req.params.userId,
+      status:'public',
+  })
+  .populate('user').lean();
+  res.render('stories/index',{stories:stories})
+}
+catch(err){
+  console.log(err);
+  res.render('erros/500');
+}
+ });
+
 module.exports=storyRoute;

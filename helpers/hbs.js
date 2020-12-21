@@ -22,7 +22,7 @@ module.exports={
              return `<a href="/stories/edit/${storyId}" class="btn-floating halfway-fab blue"><i class="fas fa-edit " style="font-size:16px;"></i></a>`
            }
            else{
-             return`<a href="/stories/edit/${storyId}"><i class="fas fa-edit " style="font-size:16px;><</a>`
+             return`<a href="/stories/edit/${storyId}"><i class="fas fa-edit" style="font-size:16px;"></i></a>`
            }
         }
         else{
